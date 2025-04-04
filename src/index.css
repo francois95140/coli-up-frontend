@@ -34,7 +34,7 @@ h1 {
   font-size: 2rem;
   line-height: 1.1;
 }
-
+/*
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -52,7 +52,7 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
+*/
 /* Remove the dark mode styles to match the design */
 @media (prefers-color-scheme: dark) {
   :root {

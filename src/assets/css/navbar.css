@@ -1,0 +1,91 @@
+ /*---global---*/
+ @theme {
+    --color-clifford: #da373d;
+    --primary: #007bff;
+    --primary-background: #cdd8e2;
+    --card-background: #aec0d0;
+}
+body, html {
+    min-height: 100vh;
+    background-color: var(--primary-background);
+    
+}
+.size-3xl {
+    height: var(--text-3xl);
+    width: var(--text-3xl);
+}
+
+
+/*---content cards---*/
+.card {
+    background-color: var(--card-background);
+}
+.card .icon {
+    background-repeat: no-repeat;
+}
+
+.card .icon.plane {
+    border: solid 3px #007899;
+    background-color: #12CCFF9D;
+    background-image: url('./assets/images/airplane.svg');
+    background-size: 80%;
+    background-position: center 70%;
+}
+.card .title {
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: auto;
+    padding-left: 1rem;
+    text-align: left; /* Ajuste selon le besoin: left, center, right */
+    vertical-align: middle; /* Ajuste selon le besoin */
+    color: rgba(0, 0, 0, 0.7); /* Noir avec 70% d'opacité */
+}
+.card .subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: semibold;
+    font-size: 1.3rem;
+    line-height: 1rem;
+    padding-left: 1.2rem;
+    text-align: left; /* Ajuste selon le besoin: left, center, right */
+    vertical-align: middle; /* Ajuste selon le besoin */
+    color: rgba(0, 0, 0, 0.5); /* Noir avec 70% d'opacité */
+}
+.status {
+    --color : 190;
+    border: solid 2px hsl(var(--color), 100%, 30%);
+    background-color: hsla(var(--color), 100%, 54%, 0.616);
+    color: hsl(var(--color), 92%, 19%);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: semibold;
+    font-size: 0.9rem;
+    border-radius: 2rem;
+    width: fit-content;
+    padding: 0.2rem 0.5rem 0.2rem 0.5rem;
+    margin: 0.5rem 0 0 1.2rem;
+}
+
+
+/*---navbar---*/
+.selector {
+    height: 3rem;
+    width: 3rem;
+    transition: 0.5s all 0.2s;
+    backdrop-filter: invert(80%) sepia(1) hue-rotate(120deg) saturate(4);
+}
+.nav button:nth-child(1).active ~ .selector {
+    left: calc(((100vw - (var(--text-3xl) * 5) ) / 6) * 1 + (var(--text-3xl) * 0) - (3rem - var(--text-3xl))/2);
+}
+.nav button:nth-child(2).active ~ .selector {
+    left: calc(((100vw - (var(--text-3xl) * 5) ) / 6) * 2 + (var(--text-3xl) * 1) - (3rem - var(--text-3xl))/2);
+}
+.nav button:nth-child(3).active ~ .selector {
+    left: calc(((100vw - (var(--text-3xl) * 5) ) / 6) * 3 + (var(--text-3xl) * 2) - (3rem - var(--text-3xl))/2);
+}
+.nav button:nth-child(4).active ~ .selector {
+    left: calc(((100vw - (var(--text-3xl) * 5) ) / 6) * 4 + (var(--text-3xl) * 3) - (3rem - var(--text-3xl))/2);
+}
+.nav button:nth-child(5).active ~ .selector {
+    left: calc(((100vw - (var(--text-3xl) * 5) ) / 6) * 5 + (var(--text-3xl) * 4) - (3rem - var(--text-3xl))/2);
+}
