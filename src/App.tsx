@@ -7,9 +7,11 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
+import AddPackagePage from './pages/AddPackagePage';
 
 // Import components
 import BottomNavBar from './components/BottomNavBar';
+import PackageTracking from './components/PackageTracking';
 
 // Wrapper component to conditionally render the BottomNavBar
 const AppLayout = ({ children, isAuthenticated }: { children: React.ReactNode, isAuthenticated: boolean }) => {
@@ -95,6 +97,14 @@ function App() {
               {isAuthenticated ? <div>Page Notifications</div> : <Navigate to="/login" />}
             </AppLayout>
           } />
+          <Route path="/tracking/:trackingNumber" element={
+            isAuthenticated? <PackageTracking /> : <Navigate to="/login" />
+          } />
+          <Route path="/add-package" element={
+            <AppLayout isAuthenticated={isAuthenticated}>
+              {isAuthenticated? <AddPackagePage/> : <Navigate to="/login" />}
+            </AppLayout>
+          }/>
         </Routes>
       </div>
     </Router>

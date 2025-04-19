@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Logo from '../components/Logo';
 import PackageCard from '../components/PackageCard';
@@ -6,6 +6,8 @@ import AddPackageForm from '../components/AddPackageForm';
 
 function Home() {
   const [showAddForm, setShowAddForm] = useState(false);
+  const navigate = useNavigate();
+  // Remove the showAddForm state since we're navigating to a separate page
   
   // Sample package data
   const [packages, setPackages] = useState([
@@ -91,7 +93,12 @@ function Home() {
         <section className="packages-section">
           <div className="section-header">
             <h2>Mes colis</h2>
-            <button className="btn btn-primary btn-sm" onClick={() => setShowAddForm(true)}>+ Ajouter</button>
+            <button 
+              className="btn btn-primary btn-sm" 
+              onClick={() => navigate('/add-package')}
+            >
+              + Ajouter
+            </button>
           </div>
 
           <div className="package-list">
@@ -140,13 +147,6 @@ function Home() {
           </div>
         </section>
       </main>
-      
-      {showAddForm && (
-        <AddPackageForm 
-          onClose={() => setShowAddForm(false)} 
-          onSubmit={handleAddPackage} 
-        />
-      )}
     </div>
   );
 }
